@@ -21,7 +21,7 @@ My GitHub User Search project is built entirely with vanilla JavaScript, utilizi
 ### Links
 
 - Code URL: [Github Repo.](https://github.com/mzwabantu/ghus)
-- Live Site URL: [Eezy Bank](http://ghus.mzwwwa.co.za/)
+- Live Site URL: [GitHub User Search (Ghus)](http://ghus.mzwwwa.co.za/)
 
 
 ## Tech stack
