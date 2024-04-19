@@ -140,3 +140,9 @@ footer a { text-decoration: none;}
     0% { opacity: 0.25;}
     100% { opacity: 0.55;}
 }
+
+/* Mobile */
+@media(max-width: 800px) {  
+    .banner .fs-1 { font-size: 22px !important;}
+    footer p { font-size: 12px !important;}
+}
