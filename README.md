@@ -1,6 +1,6 @@
 # GitHub User Search (Ghus)
 
-My GitHub User Search project is built entirely with vanilla JavaScript, utilizing the GitHub REST API through Octokit. If you're interested in cloning it, please note that you'll need to obtain your own GitHub token for authentication. Happy coding!
+My GitHub User Search project is built entirely with vanilla JavaScript, utilizing the GitHub REST API through Octokit. If you're interested in cloning it, please note that you'll need to obtain your own GitHub token for authentication. The scripts are bundled up using webpack to support ES6 modules, you need to run `npx webpack` to bundle the *app.js* file, Happy coding!
 
 ## Table of contents
 
@@ -30,6 +30,7 @@ My GitHub User Search project is built entirely with vanilla JavaScript, utilizi
 - HTML5
 - CSS 
 - Bootstrap 5
+- Webpack
 
 
 

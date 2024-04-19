@@ -1,16 +1,21 @@
-import { Octokit } from "https://esm.sh/@octokit/core";
+import { Octokit } from "@octokit/core";
 import {notFoundTemplate, searchTemplate, userTemplate, repoTemplate, skeleton} from "./templates.js";
-
 
 document.addEventListener('DOMContentLoaded', function () {
     
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'config.json', true);
+
+    // Make sure config.json file is not exposed
+    xhr.open('GET', 'config.json', true); 
+
+    // I hide it prod with approach, where private is not accessible to public, 
+    // xhr.open('GET', '/private/read_config.php', true); 
+    // you could use environment variables aswell
+
     xhr.onload = function () {
         if (xhr.status === 200) {
             const config = JSON.parse(xhr.responseText);
             const githubToken = config.githubToken;
-            
             const octokit = new Octokit({ auth: githubToken });
 
             const searchInput = document.getElementById("search");
@@ -18,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const themeSwitcher = document.getElementById("switch");
             const userResults = document.getElementById("userResults");
             const body = document.querySelector('body');
-            let preUserResults = [];
+            let prevUserResults = [];
             let searchTimeout;
 
             // Theme
@@ -76,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                         
                         const users = response.data.items;
-                        preUserResults = users;
+                        prevUserResults = users;
 
                         if (users.length > 0) {
                             const dropdownHTML = users.map(user => searchTemplate(user)).join('');
@@ -109,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const target = event.target;
                 const isSearch = target.classList.contains('form-control');
                 
-                if (isSearch && preUserResults.length) showResults();
+                if (isSearch && prevUserResults.length) showResults();
                 else showResults(false);
             }); 
         } else {
