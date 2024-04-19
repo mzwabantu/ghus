@@ -18,19 +18,30 @@ export function userTemplate(user) {
             <div class="profile-img d-flex align-items-center">
                 <img alt="" src="${user.avatar_url}" width="200" height="200" class="img-thumbnail rounded-circle" />
                 <div class="ms-3 ms-md-4">
-                    <h2 class="fs-4 mb-1">${user.name ?? ''}</h2>
-                    <p class="text-secondary mb-2 mb-md-3">${user.login ?? ''}</p>
+                    <h2 class="fs-4 mb-1">
+                        <a href="${user.html_url}" target="_blank">${user.name ?? ''}</a>
+                    </h2>
+                    <p class="text-secondary mb-2 mb-md-3">
+                        <a href="${user.html_url}" target="_blank">${user.login ?? ''}</a>
+                    </p>
                     
                     <p class="fs-6 text-muted mb-1">
-                        <i class="bi bi-people me-1"></i>
-                        <span class="text-dark fw-bold">${user.followers}</span> followers &bullet; 
-                        <span class="text-dark fw-bold">${user.following}</span> following
+                        <a href="${user.html_url}?tab=followers" target="_blank">
+                            <i class="bi bi-people me-1"></i>
+                            <span class="text-dark fw-bold">${user.followers}</span> followers
+                        </a>
+                         &bullet; 
+                        <a href="${user.html_url}?tab=following" target="_blank">
+                            <span class="text-dark fw-bold">${user.following}</span> following
+                        </a>
                     </p>
 
                     ${
                         user.email ? 
                         `<p class="fs-6 text-muted mb-2">
-                            <i class="bi bi-envelope me-1"></i> ${user.email}
+                            <a href="mailto:${user.email}" target="_blank">
+                                <i class="bi bi-envelope me-1"></i> ${user.email}
+                            </a>
                         </p>` : ''
                     }
                     

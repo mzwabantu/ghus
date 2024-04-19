@@ -30,12 +30,16 @@ body.dark .repo-card {
 }
 body.dark .text-secondary, 
 body.dark .text-muted, 
+body.dark .profile-img p.text-muted a,
 body.dark .text-muted svg { 
     fill: var(--ghus-gray) !important;
     color: var(--ghus-gray) !important;
 }
-
-
+body.dark .profile-img p.text-muted a:hover,
+body.dark .profile-img p.text-muted a:hover .text-dark {
+    color: var(--bs-blue) !important;
+    fill: var(--bs-blue) !important;
+}
 body.dark .text-bg-light {
     color: var(--ghus-gray) !important;
     background-color: transparent !important;
@@ -49,6 +53,3 @@ body.dark .form-switch .form-check-input, body.dark .form-switch .form-check-inp
 /* Theme Light */
 body.light { background-color: white; }
 body.light .header .logo { filter: invert(1); }
-
-
-

@@ -90,6 +90,13 @@
     .profile-img p {font-size: 14px !important;}
     .profile-img h2 {font-size: 18px !important;}
 }
+.profile-img a {text-decoration: none;}
+.profile-img h2 a { color: var(--bs-body-color); }
+.profile-img p.text-secondary a { color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)); }
+.profile-img p.text-muted a { color: var(--bs-secondary-color); }
+.profile-img h2 a:hover,
+.profile-img p.text-secondary a:hover {  text-decoration: underline; }
+.profile-img p.text-muted a:hover, .profile-img p.text-muted a:hover .text-dark {color: var(--bs-blue) !important;}
 
 /* Theme Switcher */
 #switchForm .light, #switchForm .dark { display: none; }
